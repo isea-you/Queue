@@ -1,0 +1,63 @@
+//首先，来实现一下队列接口
+public interface Queue<E>{
+	int getSize();
+	boolean isEmpty();
+	void enqueue(E e);
+	E dequeue();
+	E getFront();
+}
+
+//接下来，实现基于数组实现的类
+public class ArrayQueue<E> implements Queue<E>{
+	Array<E> array;
+	public ArrayQueue(int capacity){
+		array = new Array<>(capacity);
+	}
+	
+	public ArrayQueue(){
+		arrar = new Array<>();
+	}
+	
+	@Override
+	public int getSize(){
+		return array.getSize();
+	}
+	
+	@Override
+	public boolean isEmpty(){
+		return array.isEmpty();
+	}
+	
+	@Override
+	public void enqueue(E e){
+		array.addLast(e);
+	}
+	
+	@Override
+	public E dequeue(){
+		return array.removeFirst();
+	}
+	
+	@Override
+	public E getFront(){
+		return array.getFirst();
+	}
+	
+	public int getCapaicty(){
+		return array.getCapaicty();
+	}
+	
+	@Override
+	public String toString(){
+		StringBuffer res = new StrigBuffer();
+		res.append("Queue");
+		res.append("Top [");
+		for(int i = 0 ; i < array.getSize(); i ++){
+			res.append(array.get(i));
+			if(i != array.getSize() - 1){
+				res.append(", ");
+		}
+		res.append("] Tail");
+		res.toString();
+	}
+}
